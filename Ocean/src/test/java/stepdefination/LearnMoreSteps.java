@@ -14,9 +14,7 @@ import resuable.BrowserInvocation;
 import resuable.HandleExcel;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LearnMoreSteps extends BrowserInvocation {
 
@@ -100,6 +98,11 @@ public class LearnMoreSteps extends BrowserInvocation {
             col1Values.add(e.getText());
         }
 
+        List <String> col2Values = new ArrayList<String>();
+        for (WebElement e:eyTableElement){
+            col2Values.add(e.getText());
+        }
+
        for(String g:col1Values){
 
            if(g.equals("Revenue")){
@@ -109,8 +112,13 @@ public class LearnMoreSteps extends BrowserInvocation {
            }
        }
 
-        System.out.println( WikiPage.getSpeValue(4,4));
+       Map<List,List> m = new HashMap<List,List>();
+       m.put(col1Values,col2Values);
 
-        Assert.assertEquals("10,236",WikiPage.getSpeValue(4,4));
+       Assert.assertEquals("1989", m.get("Founded"));
+
+        System.out.println( WikiPage.getValueFromWikiTable(12,3));
+
+        Assert.assertEquals("10,236",WikiPage.getValueFromWikiTable(4,4));
     }
 }

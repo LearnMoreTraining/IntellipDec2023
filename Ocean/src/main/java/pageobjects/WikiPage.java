@@ -6,7 +6,7 @@ import resuable.BrowserInvocation;
 public class WikiPage extends BrowserInvocation {
 
 
-    public static String getSpeValue(int rowIndex, int columnIndex){
+    public static String getValueFromWikiTable(int rowIndex, int columnIndex){
 
       String value=  driver.findElement(By.xpath("//table[@class='wikitable']/tbody/tr["+rowIndex+"]/td["+columnIndex+"]")).getText();
 
@@ -14,12 +14,12 @@ public class WikiPage extends BrowserInvocation {
 
     }
 
-    public static String getRowValue(String name){
+    public static String getValueFromWikiTable(String name){
 
       return  driver.findElement(By.xpath("//table[@class='wikitable']/tbody/tr/td[normalize-space(text())='"+name+"']/following-sibling::td")).getText();
     }
 
-    public static String getColunValue(int columnIndex){
+    public static String getValueFromWikiTable(int columnIndex){
 
        return driver.findElement(By.xpath("//table[@class='wikitable']/tbody/tr/td["+columnIndex+"]")).getText();
     }

@@ -36,6 +36,7 @@ public class Hooks extends BrowserInvocation {
     public void takeScreen(Scenario s){
 
       byte[] b=  ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+
         s.attach(b,"image/png","test");
 
     }

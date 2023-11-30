@@ -5,6 +5,8 @@ import java.util.List;
 
 public class ListExample {
 
+    int a = 90;
+
     public static void main(String[] args) {
 
         List<Integer> l1 = new ArrayList<Integer>();
