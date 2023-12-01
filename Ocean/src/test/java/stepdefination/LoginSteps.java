@@ -156,5 +156,14 @@ public class LoginSteps extends BrowserInvocation {
     boolean e = driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_LabelMarketStation2")).isEnabled(); //false
 
     Assert.assertFalse(e);
+
+    driver.switchTo().alert().getText();
+
+    driver.switchTo().alert().dismiss();
+
+    driver.switchTo().alert().sendKeys("Aravinth");
+    driver.switchTo().alert().accept();
+
+
   }
 }
