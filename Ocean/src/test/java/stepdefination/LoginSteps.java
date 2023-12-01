@@ -14,6 +14,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobjects.HomePage;
+import pageobjects.LoginPage;
 import resuable.BrowserInvocation;
 
 import java.time.Duration;
@@ -22,9 +24,17 @@ import java.util.List;
 
 public class LoginSteps extends BrowserInvocation {
 
+  LoginPage f ;
+  HomePage g;
+
+  LoginSteps(){
+    f = new LoginPage();
+    g = new HomePage();
+  }
 
   @And("user clicks on login button")
   public void clickLogin(){
+
     driver.findElement(By.xpath("//button[text()='Login']")).click();
   }
 
