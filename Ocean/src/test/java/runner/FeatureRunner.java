@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
         features = {"src/test/resources/featurefile"},
         glue = {"stepdefination"},
-        tags = "@Action",
+        tags = "@RegessionTest",
         plugin = {"pretty",
         "html:target/test-outputt/sample.html",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}

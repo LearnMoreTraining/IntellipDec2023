@@ -4,6 +4,6 @@ Feature: Amazon Validation
   Scenario: Mouse Action
     Given user handles "abc" the mouse action "iphone"
 
-   @DragDrop
+   @DragDrop @RegessionTest
   Scenario: jquery
     Given user performs drag and drop
