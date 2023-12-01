@@ -35,7 +35,7 @@
                         <exclude>**/*FeatureRunner.java</exclude>
                     </includes>
                 </configuration>
-                
+
             </plugin>
         </plugins>
     </build>
