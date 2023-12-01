@@ -143,4 +143,18 @@ public class LoginSteps extends BrowserInvocation {
 
 
   }
+
+  @Given("Enable disbale")
+  public void enableDisbale() {
+
+   boolean g= driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_OneWay")).isSelected();
+
+    Assert.assertTrue(g);
+
+    driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_LabelMarketStation1")).isDisplayed();
+
+    boolean e = driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_LabelMarketStation2")).isEnabled(); //false
+
+    Assert.assertFalse(e);
+  }
 }
