@@ -11,9 +11,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import resuable.BrowserInvocation;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,10 +45,12 @@ public class LoginSteps extends BrowserInvocation {
   }
 
   @When("user enter username {string} and password {string}")
-    public void enterUserName(String username, String password){
+    public void enterUserName(String username, String password) throws InterruptedException {
 
     driver.findElement(By.xpath("//input[@id='username']")).sendKeys(username);
     driver.findElement(By.id("password")).sendKeys(password);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
     driver.findElement(By.cssSelector("#password")).sendKeys(password);
 
 
