@@ -7,7 +7,3 @@ Feature: Amazon Validation
    @DragDrop @RegessionTest
   Scenario: jquery
     Given user performs drag and drop
-
-     @ssssss
-     Scenario: 8999999999999
-       Given mmmmmmmmmmm

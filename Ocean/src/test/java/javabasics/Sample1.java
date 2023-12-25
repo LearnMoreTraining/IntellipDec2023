@@ -1,7 +1,7 @@
 package javabasics;
 
 public class Sample1 {
-    static int a = 10;  //global variable
+    static int a = 152;  //global variable
     public void m1(){
 
         System.out.println("m1");
