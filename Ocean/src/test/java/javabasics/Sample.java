@@ -3,7 +3,7 @@ package javabasics;
 public class Sample {
 
 
-    static int a = 1;  //global variable
+    static int a = 10;  //global variable
     public void m1(){
 
         System.out.println("m1");
